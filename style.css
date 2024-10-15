@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+#score-board {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+#best-score {
+    font-size: 20px;
+    color: #555;
+    margin-top: 10px;
+}
+
+#user-info {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+#username {
+    border: 2px solid #ff4c4c;
+    border-radius: 4px;
+}
+
+#start-game {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 90vw;
+    height: 90vw;
+    max-width: 400px;
+    max-height: 400px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.color-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+.color-button.active {
+    opacity: 0.5;
+}
+
+#players-scores {
+    margin-top: 20px;
+}
+
+#reset-scores {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    #game-board {
+        width: 90vw;
+        height: 90vw;
+        max-width: none;
+        max-height: none;
+    }
+
+    .color-button {
+        width: 100%;
+        height: 100%;
+    }
+
+    #score-board,
+    #best-score,
+    #start-game {
+        font-size: 6vw;
+    }
+
+    #reset-scores {
+        font-size: 5vw;
+    }
+}

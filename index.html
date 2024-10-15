@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simon</title>
+</head>
+<body>
+    <div id="best-score">Best Score: 0</div>
+    <div id="score-board">Score: 0</div>
+    <div id="user-info">
+        <label class="pseudo" for="username">Enter your pseudo:</label>
+        <input type="text" id="username" placeholder="Your pseudo" />
+    </div>
+    <div id="game-board">
+        <div class="color-button" id="red"></div>
+        <div class="color-button" id="blue"></div>
+        <div class="color-button" id="yellow"></div>
+        <div class="color-button" id="green"></div>
+    </div>
+    <button id="start-game">Start Game</button>
+    <div id="timer-display">Time left: 5s</div>
+
+    <div id="players-scores">
+        <h3>Players' Scores</h3>
+        <ul id="scores-list"></ul> 
+        <button id="reset-scores">Reset All Scores</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
