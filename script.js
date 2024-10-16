@@ -105,7 +105,7 @@ function updateScore() {
 // Ajuster la vitesse du jeu
 function adjustSpeed() {
     // speed = Math.max(300, 1000 - (level * 50));
-    speed = 1000;
+    speed = 800;
 }
 
 // Jouer la séquence du Simon
@@ -147,8 +147,7 @@ function checkPlayerMove() {
     if (playerSequence[currentMove] !== sequence[currentMove]) {
         clearTimeout(timer);
         sounds.wrong.play();
-        checkBestScore();
-        alert(`Séquence incorrecte ! Jeu terminé. Votre note : ${level}`);
+        alert(`Séquence incorrecte ! Jeu terminé. Votre score : ${level}`);
         addPlayerScore(username, level);
         resetGame();
     } else if (playerSequence.length === sequence.length) {
@@ -161,15 +160,15 @@ function checkPlayerMove() {
 function startTimer() {
     clearTimeout(timer);
     let timeLeft = timeLimit / 1000;
-    timerDisplay.textContent = `Time left: ${timeLeft}s`;
+    timerDisplay.textContent = `Temps restant: ${timeLeft}s`;
 
     timer = setInterval(() => {
         timeLeft--;
-        timerDisplay.textContent = `Time left: ${timeLeft}s`;
+        timerDisplay.textContent = `Temps restant: ${timeLeft}s`;
         if (timeLeft <= 0) {
             clearInterval(timer);
             sounds.wrong.play();
-            alert(`Time's up! Game over, ${username}. Your score: ${level}`);
+            alert(`Le temps est écoulé ! Jeu terminé, ${username}. Votre score: ${level}`);
             addPlayerScore(username, level);
             resetGame();
         }
@@ -181,7 +180,7 @@ function resetGame() {
     sequence = [];
     playerSequence = [];
     level = 0;
-    speed = 1000;
+    speed = 800;
     updateScore();
     clearTimeout(timer);
 }
@@ -201,9 +200,7 @@ updateScoresList();
 
 // Mise à jour meilleur score
 function updateBestScore() {
-    bestScore = 0;
-    bestPlayer = 'Unknown';
-    bestScoreBoard.textContent = `Best Score: ${bestScore} by ${bestPlayer}`;
+    bestScoreBoard.textContent = `Meilleure Score: ${bestScore} par ${bestPlayer}`;
 }
 
 document.getElementById('reset-scores').addEventListener('click', resetAllScores);
